@@ -1,0 +1,12 @@
+<script src="./encoder.js"></script>
+<script>
+        $.get('data.json', function (data) {
+            $("#list").text('');
+            var content = '';
+            for (var i = 0; i < data.length; i++) {
+                let movie = Encoder.htmlEncode(data[i].name);
+                content += '<li>' + movie + '</li>';
+            }
+            $("#list").append(content);
+        });
+</script>
